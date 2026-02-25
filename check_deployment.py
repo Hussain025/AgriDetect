@@ -38,7 +38,9 @@ def check_requirements():
         "google-generativeai",
         "SpeechRecognition",
         "gTTS",
-        "Pillow"
+        "Pillow",
+        "torch",
+        "transformers"
     ]
     
     all_found = True
@@ -112,6 +114,39 @@ def check_imports():
         print("✅ No problematic imports found")
         return True
 
+def check_ml_integration():
+    """Check ML integration"""
+    print("\n🤖 Checking ML integration...")
+    
+    ml_ok = True
+    
+    # Check ML connector exists
+    if check_file_exists("components/ml_model_connector.py", required=True):
+        print("✅ ML model connector found")
+    else:
+        print("❌ ML model connector missing!")
+        ml_ok = False
+    
+    # Check database folder
+    if check_directory_exists("AgriDetect-main", required=False):
+        print("✅ Database folder found")
+    else:
+        print("⚠️  Database folder not found (OK if using Hugging Face Hub)")
+    
+    # Check ML connector imports
+    try:
+        from components.ml_model_connector import (
+            load_plant_disease_model,
+            predict_disease,
+            get_disease_recommendations
+        )
+        print("✅ ML connector imports working")
+    except Exception as e:
+        print(f"❌ ML connector import failed: {e}")
+        ml_ok = False
+    
+    return ml_ok
+
 def main():
     """Main deployment check"""
     print("=" * 60)
@@ -141,6 +176,9 @@ def main():
     # Check imports
     imports_ok = check_imports()
     
+    # Check ML integration
+    ml_ok = check_ml_integration()
+    
     # Final summary
     print("\n" + "=" * 60)
     print("📊 DEPLOYMENT READINESS SUMMARY")
@@ -151,7 +189,8 @@ def main():
         ("Requirements", requirements_ok),
         ("Secrets Configuration", secrets_ok),
         (".gitignore", gitignore_ok),
-        ("Code Compatibility", imports_ok)
+        ("Code Compatibility", imports_ok),
+        ("ML Integration", ml_ok)
     ]
     
     for check_name, passed in all_checks:
@@ -169,6 +208,7 @@ def main():
         print("2. Deploy on Streamlit Cloud")
         print("3. Add secrets in dashboard")
         print("4. Test live app")
+        print("\n💡 Note: ML model will download from Hugging Face Hub on first use")
     else:
         print("⚠️  SOME CHECKS FAILED")
         print("❌ Please fix the issues above before deploying")

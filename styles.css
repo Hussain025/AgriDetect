@@ -1,0 +1,749 @@
+/* AgroDetect AI - Clean Modern Styles (No Glass Effect) */
+
+/* ==================== GLOBAL STYLES ==================== */
+
+/* Main app background - Soft natural gradient */
+.main {
+    background: linear-gradient(135deg, 
+        #EAF7EA 0%,
+        #F0F9F0 50%,
+        #F4FBF4 100%
+    );
+}
+
+/* Fade-in animation for page load */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.main > div {
+    animation: fadeIn 0.6s ease-out;
+}
+
+/* ==================== BUTTONS ==================== */
+
+.stButton>button {
+    background: #4CAF50;
+    border: none;
+    border-radius: 12px;
+    padding: 12px 28px;
+    font-size: 16px;
+    font-weight: 700;
+    color: #FFFFFF;
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.3);
+    transition: all 0.3s ease;
+}
+
+.stButton>button:hover {
+    background: #45a049;
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.4);
+    transform: translateY(-2px);
+}
+
+.stButton>button:active {
+    transform: translateY(0px);
+    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+}
+
+/* ==================== CARDS ==================== */
+
+.feature-card {
+    background: #FFFFFF;
+    border: 2px solid #E8F5E9;
+    border-radius: 15px;
+    padding: 30px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    margin: 15px 0;
+    transition: all 0.3s ease;
+    height: 100%;
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 24px rgba(76, 175, 80, 0.2);
+    border-color: #4CAF50;
+}
+
+.tech-card {
+    background: #FFFFFF;
+    border: 2px solid #E8F5E9;
+    border-radius: 15px;
+    padding: 25px;
+    margin: 12px 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.tech-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(76, 175, 80, 0.2);
+    border-color: #4CAF50;
+}
+
+.result-card {
+    background: #E8F5E9;
+    border: 2px solid #4CAF50;
+    border-left: 5px solid #2E7D32;
+    border-radius: 12px;
+    padding: 20px;
+    margin: 12px 0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.result-card:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.2);
+    border-left-width: 7px;
+}
+
+/* ==================== CHAT MESSAGES ==================== */
+
+.chat-message {
+    padding: 16px 20px;
+    border-radius: 15px;
+    margin: 10px 0;
+    max-width: 75%;
+    word-wrap: break-word;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+    animation: messageSlide 0.4s ease-out;
+    line-height: 1.6;
+}
+
+@keyframes messageSlide {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.user-message {
+    background: #C8E6C9;
+    border: 2px solid #81C784;
+    color: #0d3d0d;
+    font-weight: 600;
+    margin-left: auto;
+    text-align: right;
+}
+
+.bot-message {
+    background: #FFFFFF;
+    border: 2px solid #E8F5E9;
+    border-left: 4px solid #4CAF50;
+    color: #0d3d0d;
+    font-weight: 500;
+    margin-right: auto;
+}
+
+/* ==================== INFO BOXES ==================== */
+
+.info-box {
+    background: #E8F5E9;
+    border: 2px solid #4CAF50;
+    border-left: 5px solid #2E7D32;
+    border-radius: 12px;
+    padding: 25px;
+    margin: 15px 0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.info-box:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.2);
+}
+
+.info-box p,
+.info-box span,
+.info-box div {
+    color: #0d3d0d;
+    font-weight: 600;
+}
+
+.warning-box {
+    background: #FFF3E0;
+    border: 2px solid #FFB74D;
+    border-left: 5px solid #FF9800;
+    border-radius: 12px;
+    padding: 25px;
+    margin: 15px 0;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.warning-box:hover {
+    transform: translateX(5px);
+    box-shadow: 0 5px 15px rgba(255, 152, 0, 0.2);
+}
+
+.warning-box p,
+.warning-box span,
+.warning-box div {
+    color: #bf360c;
+    font-weight: 600;
+}
+
+/* ==================== HEADERS ==================== */
+
+h1 {
+    color: #0d3d0d;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    animation: fadeIn 0.8s ease-out;
+}
+
+h2 {
+    color: #1b4332;
+    font-weight: 700;
+    animation: fadeIn 0.8s ease-out;
+}
+
+h3 {
+    color: #1b5e20;
+    font-weight: 700;
+    animation: fadeIn 0.8s ease-out;
+}
+
+h4 {
+    color: #2e7d32;
+    font-weight: 600;
+    animation: fadeIn 0.8s ease-out;
+}
+
+/* ==================== TEXT ==================== */
+
+p, li, span, div, label {
+    color: #0d3d0d;
+    line-height: 1.7;
+}
+
+p {
+    font-size: 16px;
+    font-weight: 500;
+}
+
+strong, b {
+    color: #0a2f0a;
+    font-weight: 800;
+}
+
+/* ==================== INPUT FIELDS ==================== */
+
+.stTextInput>div>div>input,
+.stTextArea>div>div>textarea,
+.stSelectbox>div>div>select {
+    background: #FFFFFF !important;
+    border: 2px solid #C8E6C9 !important;
+    border-radius: 10px !important;
+    color: #0d3d0d !important;
+    font-weight: 600 !important;
+    padding: 14px !important;
+    font-size: 16px !important;
+    transition: all 0.3s ease !important;
+}
+
+.stTextInput>div>div>input::placeholder,
+.stTextArea>div>div>textarea::placeholder {
+    color: #757575 !important;
+    font-weight: 500;
+}
+
+.stTextInput>div>div>input:focus,
+.stTextArea>div>div>textarea:focus,
+.stSelectbox>div>div>select:focus {
+    border: 2px solid #4CAF50 !important;
+    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.2) !important;
+    outline: none !important;
+}
+
+.stTextInput>label,
+.stTextArea>label,
+.stSelectbox>label {
+    color: #0d3d0d !important;
+    font-weight: 700 !important;
+    font-size: 16px !important;
+}
+
+/* ==================== FILE UPLOADER ==================== */
+
+.stFileUploader>div {
+    background: #FFFFFF;
+    border: 3px dashed #81C784;
+    border-radius: 15px;
+    padding: 35px;
+    transition: all 0.3s ease;
+}
+
+.stFileUploader>div:hover {
+    border-color: #4CAF50;
+    background: #F4FBF4;
+    box-shadow: 0 4px 12px rgba(76, 175, 80, 0.15);
+}
+
+.stFileUploader label,
+.stFileUploader span {
+    color: #0d3d0d;
+    font-weight: 700;
+}
+
+/* ==================== IMAGE CONTAINERS ==================== */
+
+.image-container {
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+    border: 3px solid #E8F5E9;
+    transition: all 0.3s ease;
+}
+
+.image-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 30px rgba(76, 175, 80, 0.2);
+    border-color: #4CAF50;
+}
+
+/* ==================== VOICE ASSISTANT ==================== */
+
+.voice-box {
+    background: #FFFFFF;
+    border: 3px solid #4CAF50;
+    border-radius: 20px;
+    padding: 35px;
+    margin: 20px 0;
+    text-align: center;
+    box-shadow: 0 6px 20px rgba(76, 175, 80, 0.15);
+    transition: all 0.3s ease;
+}
+
+.voice-box:hover {
+    transform: scale(1.02);
+    box-shadow: 0 8px 30px rgba(76, 175, 80, 0.25);
+    border-color: #2E7D32;
+}
+
+.voice-box p,
+.voice-box span,
+.voice-box div {
+    color: #0d3d0d;
+    font-weight: 600;
+}
+
+/* ==================== SAMPLE QUESTIONS ==================== */
+
+.sample-question {
+    background: #F4FBF4;
+    border: 2px solid #C8E6C9;
+    border-radius: 10px;
+    padding: 14px 20px;
+    margin: 8px 0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    color: #0d3d0d;
+    font-weight: 600;
+}
+
+.sample-question:hover {
+    background: #E8F5E9;
+    transform: translateX(5px);
+    box-shadow: 0 3px 10px rgba(76, 175, 80, 0.15);
+    border-color: #4CAF50;
+}
+
+/* ==================== PROGRESS BAR ==================== */
+
+.stProgress>div>div>div {
+    background: linear-gradient(90deg, #4CAF50, #81c784);
+    border-radius: 10px;
+    box-shadow: 0 2px 8px rgba(76, 175, 80, 0.3);
+}
+
+/* ==================== EXPANDER ==================== */
+
+.streamlit-expanderHeader {
+    background: #FFFFFF;
+    border: 2px solid #C8E6C9;
+    border-radius: 10px;
+    padding: 12px 16px;
+    transition: all 0.3s ease;
+}
+
+.streamlit-expanderHeader:hover {
+    background: #F4FBF4;
+    border-color: #4CAF50;
+    box-shadow: 0 3px 10px rgba(76, 175, 80, 0.15);
+}
+
+.streamlit-expanderHeader p,
+.streamlit-expanderHeader span {
+    color: #0d3d0d;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.streamlit-expanderContent {
+    background: #FAFAFA;
+    padding: 20px;
+    border-radius: 0 0 10px 10px;
+    border: 2px solid #E8F5E9;
+    border-top: none;
+}
+
+/* ==================== SIDEBAR ==================== */
+
+[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, #2E7D4E 0%, #1F6B3F 100%);
+    border-right: 3px solid #4CAF50;
+    box-shadow: 4px 0 15px rgba(0, 0, 0, 0.1);
+}
+
+[data-testid="stSidebar"] * {
+    color: #FFFFFF !important;
+}
+
+[data-testid="stSidebar"] .stButton>button {
+    background: rgba(255, 255, 255, 0.2);
+    border: 2px solid rgba(255, 255, 255, 0.4);
+    color: #FFFFFF !important;
+}
+
+[data-testid="stSidebar"] .stButton>button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.6);
+}
+
+[data-testid="stSidebar"] h1,
+[data-testid="stSidebar"] h2,
+[data-testid="stSidebar"] h3,
+[data-testid="stSidebar"] h4 {
+    color: #FFFFFF !important;
+    font-weight: 700 !important;
+}
+
+/* ==================== COMPARISON TABLE ==================== */
+
+.comparison-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.comparison-table th {
+    background: #2E7D32;
+    color: #FFFFFF;
+    padding: 20px;
+    text-align: left;
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.comparison-table td {
+    padding: 18px;
+    border-bottom: 1px solid #E8F5E9;
+    font-size: 16px;
+    background: #FFFFFF;
+    color: #0d3d0d;
+    font-weight: 600;
+}
+
+.comparison-table tr:nth-child(even) td {
+    background: #F4FBF4;
+}
+
+.comparison-table tr:hover td {
+    background: #E8F5E9;
+}
+
+/* ==================== ANIMATIONS ==================== */
+
+@keyframes pulse {
+    0%, 100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.9;
+        transform: scale(1.05);
+    }
+}
+
+.pulse-animation {
+    animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes glow {
+    0%, 100% {
+        box-shadow: 0 0 10px rgba(76, 175, 80, 0.3);
+    }
+    50% {
+        box-shadow: 0 0 25px rgba(76, 175, 80, 0.6);
+    }
+}
+
+.glow-effect {
+    animation: glow 2s ease-in-out infinite;
+}
+
+/* ==================== MOBILE RESPONSIVENESS ==================== */
+
+@media (max-width: 768px) {
+    .feature-card {
+        padding: 20px;
+    }
+    
+    .stButton>button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    
+    .chat-message {
+        max-width: 85%;
+    }
+}
+
+/* ==================== PAGE TRANSITIONS ==================== */
+
+@keyframes slideInFromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.slide-in-bottom {
+    animation: slideInFromBottom 0.6s ease-out;
+}
+
+/* ==================== SUCCESS/ERROR STATES ==================== */
+
+.stSuccess {
+    background: #E8F5E9 !important;
+    border-left: 5px solid #4CAF50 !important;
+    color: #1b5e20 !important;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.stError {
+    background: #FFEBEE !important;
+    border-left: 5px solid #E57373 !important;
+    color: #c62828 !important;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.stWarning {
+    background: #FFF3E0 !important;
+    border-left: 5px solid #FFB74D !important;
+    color: #e65100 !important;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.stInfo {
+    background: #E8F5E9 !important;
+    border-left: 5px solid #66BB6A !important;
+    color: #1b5e20 !important;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+/* ==================== METRICS ==================== */
+
+[data-testid="stMetricValue"] {
+    color: #0d3d0d !important;
+    font-weight: 800;
+}
+
+[data-testid="stMetricLabel"] {
+    color: #2e7d32 !important;
+    font-weight: 700;
+}
+
+.stMetric {
+    background: #FFFFFF;
+    border: 2px solid #E8F5E9;
+    border-radius: 12px;
+    padding: 20px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+}
+
+.stMetric:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(76, 175, 80, 0.15);
+    border-color: #4CAF50;
+}
+
+/* ==================== TABS ==================== */
+
+.stTabs [data-baseweb="tab-list"] {
+    background: #FFFFFF;
+    border-radius: 10px;
+    padding: 5px;
+    border: 2px solid #E8F5E9;
+}
+
+.stTabs [data-baseweb="tab"] {
+    background: transparent;
+    border-radius: 8px;
+    color: #2e7d32;
+    font-weight: 700;
+    transition: all 0.3s ease;
+}
+
+.stTabs [data-baseweb="tab"]:hover {
+    background: #F4FBF4;
+}
+
+.stTabs [aria-selected="true"] {
+    background: #4CAF50 !important;
+    color: #FFFFFF !important;
+}
+
+/* ==================== DATAFRAME ==================== */
+
+.stDataFrame {
+    background: #FFFFFF;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    border: 2px solid #E8F5E9;
+}
+
+/* ==================== LINKS ==================== */
+
+a {
+    color: #2e7d32;
+    font-weight: 700;
+    text-decoration: underline;
+    text-decoration-color: rgba(76, 175, 80, 0.4);
+    text-decoration-thickness: 2px;
+    transition: all 0.3s ease;
+}
+
+a:hover {
+    color: #1b5e20;
+    text-decoration-color: #4CAF50;
+}
+
+/* ==================== SCROLLBAR ==================== */
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #F4FBF4;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #81C784;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #4CAF50;
+}
+
+/* ==================== FOCUS STATES ==================== */
+
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+    outline: 3px solid #4CAF50 !important;
+    outline-offset: 3px !important;
+}
+
+/* ==================== DIVIDERS ==================== */
+
+hr {
+    border: none;
+    height: 2px;
+    background: linear-gradient(90deg, 
+        transparent 0%, 
+        #81C784 50%, 
+        transparent 100%
+    );
+    margin: 30px 0;
+}
+
+/* ==================== FLOATING ANIMATION ==================== */
+
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+.float-animation {
+    animation: float 3s ease-in-out infinite;
+}
+
+/* ==================== CARD STACKING ANIMATION ==================== */
+
+@keyframes cardStack {
+    0% {
+        opacity: 0;
+        transform: translateY(20px) scale(0.95);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.card-stack-1 {
+    animation: cardStack 0.5s ease-out 0.1s both;
+}
+
+.card-stack-2 {
+    animation: cardStack 0.5s ease-out 0.2s both;
+}
+
+.card-stack-3 {
+    animation: cardStack 0.5s ease-out 0.3s both;
+}
+
+.card-stack-4 {
+    animation: cardStack 0.5s ease-out 0.4s both;
+}
+
+/* ==================== SPINNER ==================== */
+
+.stSpinner > div > div {
+    border-top-color: #4CAF50 !important;
+    border-right-color: #81c784 !important;
+}
+
+/* ==================== CHECKBOX & RADIO ==================== */
+
+.stCheckbox label,
+.stRadio label {
+    color: #0d3d0d !important;
+    font-weight: 600;
+}

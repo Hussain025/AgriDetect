@@ -9,16 +9,23 @@ Your AgroDetect AI application is now fully prepared for Streamlit Community Clo
 ## 📦 WHAT'S INCLUDED
 
 ### Configuration Files:
-1. **`requirements.txt`** - All Python dependencies
+1. **`requirements.txt`** - All Python dependencies (including ML packages)
 2. **`.streamlit/config.toml`** - Streamlit configuration (theme, server settings)
 3. **`.streamlit/secrets.toml.template`** - Template for API keys
 4. **`.gitignore`** - Protects secrets from Git
+
+### ML Integration:
+1. **`components/ml_model_connector.py`** - ML model integration layer
+2. **`AgriDetect-main/`** - Database folder with datasets and models
+3. **Model**: ResNet-50 from Hugging Face Hub (auto-downloads)
+4. **8 Disease Classes** - Real-time plant disease classification
 
 ### Documentation:
 1. **`DEPLOYMENT_GUIDE.md`** - Complete step-by-step deployment guide
 2. **`DEPLOYMENT_CHECKLIST.md`** - Quick checklist for deployment
 3. **`STREAMLIT_CLOUD_README.md`** - Quick start guide
-4. **`DEPLOYMENT_SUMMARY.md`** - This file
+4. **`ML_INTEGRATION_COMPLETE.md`** - ML integration documentation
+5. **`DEPLOYMENT_SUMMARY.md`** - This file
 
 ### Tools:
 1. **`check_deployment.py`** - Automated deployment readiness checker
