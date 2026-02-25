@@ -1,12 +1,5 @@
-# Large dataset files
-*.zip
-autotrain_dataset/
-archive/
-plant_disease_subset/
-hf_dataset/
-roboflow_dataset/
-test/
-New Plant Diseases Dataset(Augmented)/
+# Streamlit secrets
+.streamlit/secrets.toml
 
 # Python
 __pycache__/
@@ -18,45 +11,22 @@ env/
 venv/
 ENV/
 build/
-develop-eggs/
 dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
 *.egg-info/
-.installed.cfg
-*.egg
-
-# Model files
-*.h5
-*.pkl
-*.pth
-*.onnx
-*.pb
-
-# Environment variables
-.env
-.env.local
 
 # IDE
 .vscode/
 .idea/
 *.swp
 *.swo
-*~
 
 # OS
 .DS_Store
 Thumbs.db
 
-# Jupyter Notebook
-.ipynb_checkpoints
+# Logs
+*.log
 
-# Streamlit
-.streamlit/
+# Environment
+.env
+.env.local
