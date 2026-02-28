@@ -1,0 +1,625 @@
+/* ============================================
+   AGRODETECT AI - ULTRA DYNAMIC UI
+   Version 4.0 - Smooth Interactions & Animations
+   ============================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap');
+
+/* ============================================
+   CSS VARIABLES - Design Tokens
+   ============================================ */
+:root {
+    /* Colors */
+    --primary: #4a7c2c;
+    --primary-dark: #2d5016;
+    --primary-light: #6ba83e;
+    --accent: #8bc34a;
+    --secondary: #ff9800;
+    --info: #2196F3;
+    --success: #4caf50;
+    --warning: #ffc107;
+    --danger: #f44336;
+    
+    /* Backgrounds */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8faf9;
+    --bg-tertiary: #f0f4f1;
+    
+    /* Text */
+    --text-primary: #1a1a1a;
+    --text-secondary: #333333;
+    --text-tertiary: #666666;
+    --text-light: #999999;
+    
+    /* Shadows */
+    --shadow-xs: 0 1px 3px rgba(0,0,0,0.06);
+    --shadow-sm: 0 2px 8px rgba(0,0,0,0.08);
+    --shadow-md: 0 4px 16px rgba(0,0,0,0.12);
+    --shadow-lg: 0 8px 32px rgba(0,0,0,0.16);
+    --shadow-xl: 0 16px 48px rgba(0,0,0,0.20);
+    --shadow-2xl: 0 24px 64px rgba(0,0,0,0.24);
+    
+    /* Border Radius */
+    --radius-xs: 8px;
+    --radius-sm: 12px;
+    --radius-md: 16px;
+    --radius-lg: 24px;
+    --radius-xl: 32px;
+    --radius-full: 9999px;
+    
+    /* Spacing */
+    --space-xs: 0.5rem;
+    --space-sm: 1rem;
+    --space-md: 1.5rem;
+    --space-lg: 2rem;
+    --space-xl: 3rem;
+    --space-2xl: 4rem;
+    
+    /* Transitions */
+    --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: 600ms cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* ============================================
+   GLOBAL STYLES
+   ============================================ */
+* {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body, .main, .stApp {
+    background: linear-gradient(135deg, var(--bg-primary) 0%, var(--bg-secondary) 100%) !important;
+}
+
+/* Hide Streamlit branding */
+#MainMenu, footer, header {
+    visibility: hidden !important;
+}
+
+.main > div {
+    padding-top: 0 !important;
+}
+
+.block-container {
+    background: transparent !important;
+    padding: var(--space-lg) var(--space-xl) !important;
+    max-width: 1400px !important;
+    margin: 0 auto !important;
+}
+
+/* ============================================
+   TYPOGRAPHY - Modern & Readable
+   ============================================ */
+.main h1 {
+    font-size: 3.5rem !important;
+    font-weight: 800 !important;
+    line-height: 1.1 !important;
+    letter-spacing: -0.03em !important;
+    color: var(--primary-dark) !important;
+    margin-bottom: var(--space-md) !important;
+}
+
+.main h2 {
+    font-size: 2.5rem !important;
+    font-weight: 700 !important;
+    line-height: 1.2 !important;
+    letter-spacing: -0.02em !important;
+    color: var(--primary-dark) !important;
+    margin-bottom: var(--space-md) !important;
+}
+
+.main h3 {
+    font-size: 1.875rem !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    color: var(--primary-dark) !important;
+    margin-bottom: var(--space-sm) !important;
+}
+
+.main h4 {
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
+    line-height: 1.4 !important;
+    color: var(--primary-dark) !important;
+    margin-bottom: var(--space-sm) !important;
+}
+
+.main p, .main span, .main div, .main li {
+    font-size: 1.0625rem !important;
+    line-height: 1.75 !important;
+    color: var(--text-secondary) !important;
+}
+
+.main strong {
+    font-weight: 700 !important;
+    color: var(--primary-dark) !important;
+}
+
+/* ============================================
+   HERO SECTION - Ultra Dynamic
+   ============================================ */
+.main-header {
+    background: linear-gradient(135deg, 
+        #1a4d2e 0%, 
+        #2d5016 20%,
+        #4a7c2c 40%,
+        #6ba83e 60%,
+        #8bc34a 80%,
+        #a8d68f 100%);
+    background-size: 300% 300%;
+    animation: gradientShift 12s ease infinite;
+    padding: var(--space-2xl) var(--space-xl);
+    border-radius: var(--radius-xl);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-2xl);
+    margin-bottom: var(--space-2xl);
+}
+
+.main-header::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.2) 0%, transparent 70%);
+    animation: rotate 30s linear infinite;
+}
+
+.main-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, 
+        transparent 0%,
+        rgba(255,255,255,0.8) 50%,
+        transparent 100%);
+    animation: shimmer 2s ease-in-out infinite;
+}
+
+@keyframes gradientShift {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+@keyframes rotate {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+@keyframes shimmer {
+    0%, 100% { opacity: 0.3; transform: translateX(-100%); }
+    50% { opacity: 1; transform: translateX(100%); }
+}
+
+.main-header h1, .main-header p {
+    position: relative;
+    z-index: 1;
+    color: white !important;
+    text-shadow: 0 4px 16px rgba(0,0,0,0.3) !important;
+}
+
+.main-header h1 {
+    animation: fadeInUp 0.8s var(--transition-bounce) !important;
+}
+
+.main-header p {
+    animation: fadeInUp 0.8s var(--transition-bounce) 0.2s both !important;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ============================================
+   FEATURE CARDS - Neumorphism + Glass
+   ============================================ */
+.feature-card {
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(20px) saturate(180%);
+    -webkit-backdrop-filter: blur(20px) saturate(180%);
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    border: 1px solid rgba(74, 124, 44, 0.1);
+    box-shadow: var(--shadow-md);
+    transition: all var(--transition-slow);
+    position: relative;
+    overflow: hidden;
+    height: 100%;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg,
+        transparent,
+        rgba(74, 124, 44, 0.1),
+        transparent);
+    transition: left 0.7s;
+}
+
+.feature-card:hover::before {
+    left: 100%;
+}
+
+.feature-card:hover {
+    transform: translateY(-16px) scale(1.02);
+    box-shadow: var(--shadow-xl);
+    border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.9);
+}
+
+.feature-icon {
+    font-size: 5rem;
+    margin-bottom: var(--space-md);
+    display: inline-block;
+    animation: floatBounce 4s ease-in-out infinite;
+    filter: drop-shadow(0 8px 16px rgba(0,0,0,0.15));
+    transition: transform var(--transition-base);
+}
+
+.feature-card:hover .feature-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+@keyframes floatBounce {
+    0%, 100% {
+        transform: translateY(0) rotate(0deg);
+    }
+    25% {
+        transform: translateY(-15px) rotate(3deg);
+    }
+    75% {
+        transform: translateY(-8px) rotate(-3deg);
+    }
+}
+
+.feature-card h3 {
+    color: var(--primary-dark) !important;
+    font-size: 1.75rem !important;
+    font-weight: 700 !important;
+    margin: var(--space-md) 0 !important;
+}
+
+.feature-card p {
+    color: var(--text-secondary) !important;
+    font-size: 1.0625rem !important;
+    line-height: 1.7 !important;
+}
+
+/* ============================================
+   STAT CARDS - 3D Effect
+   ============================================ */
+.stat-card {
+    background: linear-gradient(135deg,
+        var(--primary) 0%,
+        var(--primary-light) 100%);
+    padding: var(--space-2xl) var(--space-lg);
+    border-radius: var(--radius-lg);
+    position: relative;
+    overflow: hidden;
+    box-shadow: var(--shadow-lg);
+    transition: all var(--transition-slow);
+    transform-style: preserve-3d;
+    perspective: 1000px;
+}
+
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    right: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.25) 0%, transparent 60%);
+    animation: rotate 25s linear infinite;
+}
+
+.stat-card:hover {
+    transform: translateY(-12px) rotateX(5deg) rotateY(5deg) scale(1.05);
+    box-shadow: var(--shadow-2xl);
+}
+
+.stat-number, .stat-label {
+    position: relative;
+    z-index: 1;
+    color: white !important;
+}
+
+.stat-number {
+    font-size: 5rem !important;
+    font-weight: 900 !important;
+    line-height: 1 !important;
+    text-shadow: 0 6px 20px rgba(0,0,0,0.4) !important;
+    margin-bottom: var(--space-sm) !important;
+}
+
+.stat-label {
+    font-size: 1.5rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 1px !important;
+    opacity: 0.95 !important;
+}
+
+/* ============================================
+   BUTTONS - Magnetic Effect
+   ============================================ */
+.stButton>button {
+    background: linear-gradient(135deg, var(--primary), var(--primary-light));
+    color: white !important;
+    border: none !important;
+    border-radius: var(--radius-md) !important;
+    padding: 1.125rem 2.5rem !important;
+    font-size: 1.0625rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.5px !important;
+    box-shadow: var(--shadow-md) !important;
+    transition: all var(--transition-base) !important;
+    position: relative !important;
+    overflow: hidden !important;
+    cursor: pointer !important;
+}
+
+.stButton>button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.stButton>button:hover::before {
+    width: 500px;
+    height: 500px;
+}
+
+.stButton>button:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: var(--shadow-xl) !important;
+}
+
+.stButton>button:active {
+    transform: translateY(-2px) scale(0.98);
+}
+
+/* ============================================
+   CONTENT BOXES - Modern Cards
+   ============================================ */
+.result-box, .info-note, .recommendation-box {
+    padding: var(--space-xl);
+    border-radius: var(--radius-lg);
+    margin: var(--space-lg) 0;
+    box-shadow: var(--shadow-md);
+    position: relative;
+    overflow: hidden;
+    animation: slideInLeft 0.6s var(--transition-bounce);
+    transition: all var(--transition-base);
+}
+
+.result-box:hover, .info-note:hover, .recommendation-box:hover {
+    transform: translateX(8px);
+    box-shadow: var(--shadow-lg);
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.result-box {
+    background: white;
+    border-left: 6px solid var(--primary);
+}
+
+.info-note {
+    background: linear-gradient(135deg, #e3f2fd 0%, #bbdefb 100%);
+    border-left: 6px solid var(--info);
+}
+
+.recommendation-box {
+    background: linear-gradient(135deg, #fff3cd 0%, #ffe082 100%);
+    border-left: 6px solid var(--secondary);
+    animation: pulse 3s ease-in-out infinite;
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: var(--shadow-md);
+    }
+    50% {
+        box-shadow: 0 12px 40px rgba(255, 152, 0, 0.4);
+    }
+}
+
+/* ============================================
+   SIDEBAR - Ultra Modern
+   ============================================ */
+[data-testid="stSidebar"] {
+    background: linear-gradient(180deg,
+        #1a4d2e 0%,
+        #2d5016 30%,
+        #4a7c2c 70%,
+        #5a8c3c 100%) !important;
+    box-shadow: 4px 0 24px rgba(0,0,0,0.2) !important;
+}
+
+[data-testid="stSidebar"] * {
+    color: white !important;
+}
+
+[data-testid="stSidebar"] button {
+    background: rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(10px) !important;
+    border: 2px solid rgba(255, 255, 255, 0.3) !important;
+    border-radius: var(--radius-sm) !important;
+    padding: 0.875rem 1.5rem !important;
+    transition: all var(--transition-base) !important;
+}
+
+[data-testid="stSidebar"] button:hover {
+    background: rgba(255, 255, 255, 0.25) !important;
+    transform: translateX(8px) scale(1.02) !important;
+    box-shadow: var(--shadow-md) !important;
+}
+
+/* ============================================
+   ANIMATIONS & INTERACTIONS
+   ============================================ */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes scaleIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Smooth page transitions */
+.main > div {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Hover lift effect for all cards */
+.feature-card, .stat-card, .result-box, .info-note, .recommendation-box {
+    will-change: transform;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-sm);
+}
+
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(180deg, var(--primary), var(--primary-light));
+    border-radius: var(--radius-sm);
+    border: 2px solid var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(180deg, var(--primary-dark), var(--primary));
+}
+
+/* Selection color */
+::selection {
+    background: rgba(74, 124, 44, 0.3);
+    color: var(--primary-dark);
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+@media (max-width: 1200px) {
+    .block-container {
+        padding: var(--space-md) var(--space-lg) !important;
+    }
+}
+
+@media (max-width: 768px) {
+    .block-container {
+        padding: var(--space-sm) var(--space-md) !important;
+    }
+    
+    .main h1 {
+        font-size: 2.5rem !important;
+    }
+    
+    .main h2 {
+        font-size: 2rem !important;
+    }
+    
+    .main-header {
+        padding: var(--space-xl) var(--space-lg);
+    }
+    
+    .feature-icon {
+        font-size: 4rem;
+    }
+    
+    .stat-number {
+        font-size: 3.5rem !important;
+    }
+}
+
+/* ============================================
+   PERFORMANCE OPTIMIZATIONS
+   ============================================ */
+* {
+    -webkit-tap-highlight-color: transparent;
+}
+
+.feature-card, .stat-card, .stButton>button {
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
