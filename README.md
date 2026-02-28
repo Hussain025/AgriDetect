@@ -1,163 +1,151 @@
-# 🌱 AgroDetect AI - Plant Disease Classification Engine
+# AgroDetect AI - Plant Disease Classification Engine
 
-A modern, modular Streamlit frontend application for plant disease detection with multi-language support and Firebase authentication.
+A modern, responsive front-end website for an AI-powered plant disease detection system.
+
+## 🌱 Project Overview
+
+AgroDetect AI is a hackathon-ready front-end website that showcases an AI system for detecting plant diseases from leaf images. The project uses transfer learning and MobileNetV2 CNN architecture.
 
 ## 📁 Project Structure
 
 ```
-AgroDetect_AI/
+AgroDetect-AI/
 │
-├── app.py                      # Main entry point with auth check
-├── pages/                      # Streamlit multipage structure
-│   ├── 0_Login.py             # User login page
-│   ├── 0_Signup.py            # User registration page
-│   ├── 1_Home.py              # Landing page with features
-│   ├── 2_About.py             # Project overview & technologies
-│   ├── 3_Upload.py            # Image upload interface
-│   ├── 4_Results.py           # Analysis results display
-│   ├── 5_AI_Assistant.py      # Chatbot interface
-│   └── 6_Voice_Assistant.py   # Voice interaction demo
+├── templates/
+│   ├── home.html          # Landing page with hero, features, stats
+│   ├── about.html         # Project overview, tech stack, how it works
+│   ├── upload.html        # Disease detection page with image upload
+│   ├── result.html        # Results display with predictions
+│   └── contact.html       # Contact form
 │
-├── components/                 # Reusable UI components
-│   ├── auth.py                # Firebase authentication logic
-│   ├── navbar.py              # Sidebar navigation with logout
-│   ├── cards.py               # Card components
-│   ├── chatbot_ui.py          # Chat interface
-│   ├── voice_ui.py            # Voice interface
-│   └── language.py            # Translation management
+├── static/
+│   ├── style.css          # Complete stylesheet for all pages
+│   └── images/            # Folder for images (placeholders included)
 │
-├── assets/                     # Static assets
-│   ├── styles.css             # Custom CSS styling
-│   └── logo.png               # Application logo
-│
-├── requirements.txt            # Python dependencies
-├── README.md                  # Documentation
-├── FIREBASE_SETUP.md          # Firebase setup guide
-└── PROJECT_STRUCTURE.md       # Detailed structure docs
+└── README.md              # This file
 ```
 
-## ✨ Features
+## 🎨 Features
 
-- 🔐 **Authentication** - Secure login/signup with Firebase
-- 🏠 **Home Page** - Welcome screen with feature cards and CTA
-- 📖 **About Page** - Project overview, transfer learning explanation, tech stack
-- 📤 **Upload Page** - Image upload with preview and analysis trigger
-- 📊 **Results Page** - Disease classification with recommendations
-- 🤖 **AI Assistant** - Interactive chatbot for plant disease Q&A
-- 🎤 **Voice Assistant** - Multi-language voice interaction demo
-- 🌍 **Multi-Language Support** - English, Hindi, Tamil, Telugu, Spanish, French
-- 🔒 **Access Control** - Protected pages require authentication
+- **Fully Responsive Design**: Works seamlessly on mobile, tablet, and desktop
+- **Modern UI/UX**: Clean, professional design with smooth animations
+- **Agriculture Theme**: Green color palette with earthy tones
+- **Interactive Elements**: Drag & drop upload, image preview, hover effects
+- **No Backend Required**: Pure HTML, CSS, and minimal JavaScript
 
-## 🚀 Installation
+## 🚀 Getting Started
 
-1. Install Python (3.8 or higher)
+1. **Open the website**: Simply open `templates/home.html` in your web browser
+2. **Navigate**: Use the navigation bar to explore different pages
+3. **Test Upload**: Go to "Detect Disease" page to test the image upload functionality
 
-2. Install dependencies:
-```bash
-pip install -r requirements.txt
-```
+## 🎯 Pages Overview
 
-3. Set up Firebase Authentication:
-   - Follow the detailed guide in `FIREBASE_SETUP.md`
-   - Update `components/auth.py` with your Firebase credentials
+### Home Page (home.html)
+- Hero section with call-to-action buttons
+- Features showcase (Instant Detection, High Accuracy, Farmer-Friendly)
+- Statistics section (38+ diseases, 10+ crops, 95% accuracy)
+- Call-to-action banner
 
-## 🎯 Running the Application
+### About Page (about.html)
+- Project overview and mission
+- Technology stack display
+- Step-by-step "How It Works" section
+- Use cases for different user types
 
-Run the following command in your terminal:
+### Upload Page (upload.html)
+- Drag & drop image upload
+- Image preview before analysis
+- Supported crops information
+- Interactive JavaScript functionality
 
-```bash
-streamlit run app.py
-```
+### Result Page (result.html)
+- Uploaded image display
+- Disease prediction with confidence score
+- Status badge (Healthy/Diseased)
+- Recommendations and action buttons
 
-The application will open in your default web browser at `http://localhost:8501`
+### Contact Page (contact.html)
+- Contact form with validation
+- Contact information display
+- Form submission handling (front-end only)
 
-## 📖 Usage
+## 🛠️ Technology Stack
 
-### First Time Users:
-1. Click "Create New Account" on the login page
-2. Enter your email and password (min 6 characters)
-3. Confirm your password
-4. Click "Create Account"
-5. Login with your new credentials
-
-### Returning Users:
-1. Enter your email and password
-2. Click "Login"
-3. Access all features of the application
-
-### Navigation:
-1. Select your preferred language from the sidebar
-2. Navigate through pages using Streamlit's page navigation
-3. Upload a plant leaf image on the Upload page
-4. Click "Analyze Leaf" to see results
-5. Interact with AI Assistant for plant disease questions
-6. Try Voice Assistant for voice-based interaction
-7. Click "Logout" in sidebar when done
-
-## 🔒 Authentication Features
-
-- **Secure Login** - Firebase email/password authentication
-- **User Registration** - Create new accounts with validation
-- **Password Protection** - Minimum 6 characters, masked input
-- **Session Management** - Persistent login across pages
-- **Access Control** - Protected pages require authentication
-- **Logout** - Clear session and redirect to login
-
-## 🛠️ Technologies Used
-
-### Frontend
-- **Python** - Core programming language
-- **Streamlit** - Web application framework
-- **Pillow (PIL)** - Image processing
-
-### Authentication
-- **Firebase Authentication** - User management
-- **Requests** - HTTP library for Firebase REST API
-
-### AI Concepts (Frontend Demo)
-- **Transfer Learning** - MobileNetV2 architecture
-- **CNN** - Convolutional Neural Networks
-- **Deep Learning** - Disease classification
+- **HTML5**: Semantic markup
+- **CSS3**: Modern styling with Flexbox and Grid
+- **JavaScript**: Minimal vanilla JS for interactivity
+- **Google Fonts**: Inter font family
 
 ## 🎨 Design Features
 
-- Clean, modern UI with eco-friendly green theme
-- Responsive layout with card-based design
-- Custom CSS styling for professional appearance
-- Modular component architecture for reusability
-- Session state management for smooth navigation
-- Secure authentication flow
+- **Color Palette**:
+  - Primary Green: #4a7c2c
+  - Dark Green: #2d5016
+  - Light Green: #6ba83e
+  - Background: #f5f9f3
+  
+- **Typography**: Inter font family (clean and professional)
+- **Animations**: Fade-in effects, hover transitions
+- **Icons**: Emoji-based icons for simplicity
 
-## 📝 Note
+## 📱 Responsive Breakpoints
 
-This is a **frontend-only** application with placeholder results. No actual ML model or backend is included. The application demonstrates UI/UX design, user authentication, and interaction flows for an AI-powered plant disease detection system.
+- **Desktop**: 1200px and above
+- **Tablet**: 768px - 1199px
+- **Mobile**: 480px - 767px
+- **Small Mobile**: Below 480px
 
 ## 🔧 Customization
 
-- **Firebase Config**: Edit `components/auth.py` to update credentials
-- **Translations**: Edit `components/language.py` to add/modify languages
-- **Styling**: Modify `assets/styles.css` for custom themes
-- **Components**: Extend components in `components/` directory
-- **Pages**: Add new pages in `pages/` directory following naming convention
+### Changing Colors
+Edit the CSS variables in `static/style.css`:
+```css
+:root {
+    --primary-green: #4a7c2c;
+    --dark-green: #2d5016;
+    /* ... other colors */
+}
+```
 
-## 🔐 Security Notes
+### Adding Images
+Place your images in `static/images/` and update the image paths in HTML files.
 
-- Never commit Firebase credentials to version control
-- Use Streamlit secrets or environment variables for production
-- Add `.streamlit/secrets.toml` to `.gitignore`
-- Follow Firebase security best practices
-- Enable email verification for production use
+### Modifying Content
+Edit the HTML files in the `templates/` folder to change text, add sections, or modify layout.
 
-## 📚 Documentation
+## 🌟 Key Features
 
-- `FIREBASE_SETUP.md` - Complete Firebase setup guide
-- `PROJECT_STRUCTURE.md` - Detailed project structure documentation
-- `README.md` - This file
+✅ No backend or framework dependencies  
+✅ Pure HTML, CSS, and JavaScript  
+✅ Fully responsive and mobile-friendly  
+✅ Modern, clean design  
+✅ Easy to customize  
+✅ Hackathon-ready  
+✅ Professional appearance  
 
-## 🚀 Deployment
+## 📝 Notes
 
-For deployment on Streamlit Cloud or other platforms:
-1. Push code to GitHub (without secrets)
-2. Configure secrets in platform dashboard
-3. Ensure all dependencies are in requirements.txt
-4. Follow platform-specific deployment guides
+- This is a **front-end only** project (no backend functionality)
+- Image upload and analysis are simulated (no actual AI processing)
+- Form submissions show alerts (no data is sent to a server)
+- The result page shows placeholder data for demonstration
+
+## 🎓 Use Cases
+
+- **Hackathon Projects**: Ready-to-present front-end
+- **Portfolio**: Showcase web development skills
+- **Prototyping**: Quick mockup for AI agriculture projects
+- **Learning**: Study modern HTML/CSS/JS practices
+
+## 📄 License
+
+This project is open-source and available for educational and commercial use.
+
+## 🤝 Contributing
+
+Feel free to fork, modify, and enhance this project for your needs!
+
+---
+
+**AgroDetect AI** - Empowering Smart Agriculture 🌱
